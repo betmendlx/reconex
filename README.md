@@ -1,4 +1,4 @@
 # reconex
 for recon ;) 
 
-idea from https://github.com/coffinxp 
+all credits & idea from https://github.com/coffinxp 
