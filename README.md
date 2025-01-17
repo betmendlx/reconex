@@ -30,7 +30,7 @@ di antara jejak-jejak yang fana.
 
 for recon ;) 
 
-all credits & idea from https://github.com/coffinxp 
+all credits goes to https://github.com/coffinxp 
 
 "this tool for education purpose only" 
 
