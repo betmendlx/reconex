@@ -8,7 +8,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-VT_API_KEY="YOUR_API_KEY_HERE"
+VT_API_KEY="YOUR_VirusTotal_API_KEY_HERE"
 OUTPUT_DIR="recon_results"
 VERBOSE=false
 MAX_PARALLEL_JOBS=20
