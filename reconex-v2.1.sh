@@ -8,7 +8,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-VT_API_KEY="18e0995a79cd68614ed03a43f11d0ab386e7f68f81fb5a17b30a5ca4a471341c"
+VT_API_KEY="YOUR_API_KEY_HERE"
 OUTPUT_DIR="recon_results"
 VERBOSE=false
 MAX_PARALLEL_JOBS=20
