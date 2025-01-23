@@ -8,7 +8,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-VT_API_KEY="YOUR_VIRUS_TOTAL_API_KEY_HERE"
+VT_API_KEY="18e0995a79cd68614ed03a43f11d0ab386e7f68f81fb5a17b30a5ca4a471341c"
 OUTPUT_DIR="recon_results"
 VERBOSE=false
 MAX_PARALLEL_JOBS=20
@@ -298,63 +298,4 @@ main() {
     print_status "Results stored in: ${output_dir}"
 }
 
-main "$@"#!/bin/bash
-
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
-
-# Configuration
-VT_API_KEY="YOUR_VIRUS_TOTAL_API_KEY_HERE"
-OUTPUT_DIR="recon_results"
-VERBOSE=false
-MAX_PARALLEL_JOBS=20  # Increased from 10
-TIMEOUT=5  # Reduced from 10
-MAX_RETRIES=3
-CONCURRENT_DOWNLOADS=50  # For aria2c
-
-# File patterns (optimized regex)
-FILE_PATTERN='\.(xls|xml|xlsx|json|pdf|sql|doc|docx|pptx|txt|zip|tar\.gz|tgz|bak|7z|rar|log|cache|secret|db|backup|yml|gz|config|csv|yaml|md|exe|dll|bin|ini|bat|sh|tar|deb|rpm|iso|img|apk|msi|dmg)$'
-
-# Spinner function for visual feedback
-spinner() {
-    local pid=$1
-    local delay=0.1
-    local spinstr='|/-\'
-    while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
-        local temp=${spinstr#?}
-        printf " [%c]  " "$spinstr"
-        local spinstr=$temp${spinstr%"$temp"}
-        sleep $delay
-        printf "\b\b\b\b\b\b"
-    done
-    printf "    \b\b\b\b"
-}
-
-# Debug logging
-debug_log() {
-    if [ "$VERBOSE" = true ]; then
-        echo -e "${BLUE}[DEBUG] $1${NC}"
-    fi
-}
-
-print_banner() {
-    echo -e "${GREEN}"
-    cat << "EOF"
-█▀█ █▀▀ █▀▀ █▀█ █▄░█ █▀▀ ▀▄▀
-█▀▄ ██▄ █▄▄ █▄█ █░▀█ ██▄ █░█ 
-        - Achul-N-Dgeng -                                   
-             @2025                            
-                            v2.1
-EOF
-    echo -e "${NC}"
-}
-
-print_status() {
-    echo -e "${GREEN}[+] $1${NC}"
-}
-
-print_error() {
+main "$@"
